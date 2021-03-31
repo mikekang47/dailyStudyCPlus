@@ -4,11 +4,10 @@
 using namespace std;
 
 int main() {
-    string mystring;
-    mystring = "This is a string";
-    cout << mystring << endl; //endl은 stream을 비워줄 뿐만 아니라 줄바꿈까지 포함
-    mystring = "this is a different string";
-    cout << mystring << endl;
-    
+    int i;
+    cout << "Please enter an integer value: ";
+    cin >> i;
+    cout << "The value you entered is " << i;
+    cout << " and its double is " << i*2 << ".\n";
     return 0;
 }
