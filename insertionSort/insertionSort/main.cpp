@@ -3,14 +3,14 @@
 using namespace std;
 
 int n = 10;
-int target[10] = {7, 5, 9, 0, 3, 1, 6, 2, 3, 8};
+int a[10] = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
 
 
 int main() {
-    for(int i = 1; i < n; i++) {
+    for(int i = 0; i < n; i++) {
         for(int j = i; j > 0; j--) {
-            if(target[j] < target[j-1]) {
-                swap(target[j], target[j-1]);
+            if(a[j] < a[j-1]) {
+                swap(a[j],a[j-1]);
             }
             else
                 break;
@@ -18,7 +18,7 @@ int main() {
     }
     for(int i = 0; i < n; i++)
     {
-        cout << target[i] << ' ';
+        cout << a[i] << ' ';
     }
     return 0;
 }
