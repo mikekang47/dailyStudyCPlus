@@ -15,6 +15,8 @@ long long fibo(int x) {
 }
 
 int main() {
-    cout << fibo(50) << '\n';
+    int n;
+    cin >> n;
+    cout << fibo(n) << '\n';
     return 0;
 }
