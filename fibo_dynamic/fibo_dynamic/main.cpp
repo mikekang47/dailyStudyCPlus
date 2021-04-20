@@ -4,17 +4,17 @@ using namespace std;
 
 long long d[100];
 
-int main() {
-    d[1] = 1;
-    d[2] = 1;
-    int n;
-    cout << "숫자를 입력하시오 : ";
-    scanf("%d", &n);
-    
-    for(int i = 3; i <= n; i++) {
-        d[i] = d[i-1] + d[i-2];
+long long fibo(int x) {
+    if(x == 1 || x == 2)
+        return 1;
+    if(d[x] != 0){
+        return d[x];
     }
-    
-    cout << d[n] << '\n';
+    d[x] =fibo(x-1) + fibo(x-2);
+    return d[x];
+}
+
+int main() {
+    cout << fibo(50) << '\n';
     return 0;
 }
