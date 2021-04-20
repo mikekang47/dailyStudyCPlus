@@ -8,7 +8,7 @@ int n = 10;
 
 int partition(int *a, int left, int right) {
     int p = a[left];
-    int i = left  +1;
+    int i = left + 1;
     for(int j = left + 1; j <= right; j++) {
         if(a[j] < p) {
             swap(a[j], a[i]);
