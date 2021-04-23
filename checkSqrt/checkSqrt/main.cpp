@@ -1,14 +1,15 @@
-//
-//  main.cpp
-//  checkSqrt
-//
-//  Created by 강경록 on 2021/04/23.
-//
+#include <string>
+#include <vector>
+#include <cmath>
 
-#include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+long long solution(long long n) {
+    long long answer = 0;
+    if(sqrt(n)/1.00 == (int)sqrt(n)) {
+        answer = pow(sqrt(n) + 1,2);
+        return answer;
+    }
+    return -1;
+    
 }
