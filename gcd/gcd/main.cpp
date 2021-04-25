@@ -2,7 +2,7 @@
 #include <vector>
 
 using namespace std;
-// 48 60
+
 int gcd(int a, int b){
     
     if(b == 0) {
