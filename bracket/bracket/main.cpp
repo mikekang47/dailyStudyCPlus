@@ -7,8 +7,9 @@ using namespace std;
 int main() {
     int testcase;
     cin >> testcase;
-    stack<char> st;
+   
     while(testcase--) {
+        stack<char> st;
         string s;
         cin >> s;
         
@@ -17,10 +18,7 @@ int main() {
                 st.push(s[j]);
             }
             else {
-                if(st.top() == s[j]) {
-                    st.push(s[j]);
-                }
-                else if(st.top() == '(' && s[j] == ')') {
+                if(st.top() == '(' && s[j] == ')') {
                     st.pop();
                 }
                 else {
@@ -34,10 +32,5 @@ int main() {
         else {
             cout << "NO" << "\n";
         }
-        while(!st.empty()) {
-            st.pop();
-        }
     }
-    
-    
 }
