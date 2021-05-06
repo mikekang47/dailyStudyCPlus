@@ -1,31 +1,41 @@
 #include <iostream>
-#include <queue>
 #include <string>
-#include <vector>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
-
-//먼저 공백이 있을때
-//공백이 있을때는 단어별로 출력한다.
-
-string s;
-queue<char> q;
-stack<char> st;
-
-int main() {
-    cin >> s;
-    for(int i = 0; i < s.size(); i++) {
-        q.push(s[i]);
-    }
-    while(!q.empty()) {
-        if(q.front() == ' ') {
-            while(!st.empty()) {
-                cout << st.top();
+ 
+int main()
+{
+    string s = "";
+    getline(cin, s);
+    s += '\n';
+    stack<char> st;
+    bool check = false;
+    for (int i = 0; i < s.size(); i++) {
+        
+        if (s[i] == '<') {
+            while (!st.empty()) {
+                printf("%c", st.top());
                 st.pop();
             }
+            printf("<");
+            check = true;
         }
-        st.push(q.front());
-        q.pop();
+        else if (s[i] == '>') {
+            printf(">");
+            check = false;
+        }
+        else if (check) printf("%c", s[i]);
+        
+        else if (s[i] == ' ' || s[i] == '\n') {
+            while (!st.empty()) {
+                printf("%c", st.top());
+                st.pop();
+            }
+            printf(" ");
+        }
+        else st.push(s[i]);
     }
+    return 0;
 }
