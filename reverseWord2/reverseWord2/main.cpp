@@ -1,14 +1,44 @@
-//
-//  main.cpp
-//  reverseWord2
-//
-//  Created by 강경록 on 2021/05/20.
-//
-
 #include <iostream>
+#include <string>
+#include <stack>
+#include <algorithm>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+ 
+int main()
+{
+    string str;
+    getline(cin, str);
+    str += '\n';
+    stack<char> st;
+    bool check = false;
+    for (int i = 0; i < str.size(); i++) {
+        if(str[i] == '<') {
+            while(!st.empty()) {
+                cout << st.top();
+                st.pop();
+            }
+            cout << '<';
+            check = true;
+        }
+        else if(str[i] == '>') {
+            cout << '>';
+            check = false;
+        }
+        else if(check) {
+            cout << str[i];
+        }
+        else if(str[i] == ' '|| str[i] == '\n') {
+            while(!st.empty()) {
+                cout << st.top();
+                st.pop();
+            }
+            cout << ' ';
+        }
+        else {
+            st.push(str[i]);
+        }
+       
+    }
     return 0;
 }
