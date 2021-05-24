@@ -9,9 +9,6 @@ using namespace std;
 
 vector<int> v;
 
-int modifygcd(int a,int b) {
-    return modifygcd(gcd(a,b), b);
-}
 int main() {
     int n;
     int s;
