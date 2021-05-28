@@ -1,14 +1,33 @@
-//
-//  main.cpp
-//  124World
-//
-//  Created by 강경록 on 2021/05/27.
-//
+#include <string>
+#include <vector>
+#include <stack>
 
-#include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+string solution(int n) {
+    string answer = "";
+    stack<int> st;
+    while(n > 3) {
+        int temp = n % 3;
+        if(temp == 0) {
+            st.push(3);
+            n = n/3 -1;
+        }
+        else {
+            st.push(n%3);
+            n = n/3;
+        }
+    }
+    st.push(n);
+    
+    while (!st.empty()) {
+        int num = st.top();
+        st.pop();
+        if (num == 3)
+            answer += "4";
+        else
+            answer += to_string(num);
+    }
+
+    return answer;
 }
