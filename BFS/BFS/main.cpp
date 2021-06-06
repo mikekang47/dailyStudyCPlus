@@ -4,9 +4,8 @@
 
 using namespace std;
 
-void bfs(vector<int> graph[], bool check[]) {
+void bfs(int start, vector<int> graph[], bool check[]) {
     queue<int> q;
-    int start = graph[0][0];
     q.push(start);
     check[start] = true;
     
@@ -27,8 +26,8 @@ void bfs(vector<int> graph[], bool check[]) {
 
 int main() {
     
-    vector<int> g[] = {{1}, {2,3,8}, {1,7}, {1, 4, 5}, {3, 5}, {3,4}, {7}, {2, 6, 8}, {1, 7}};
+    vector<int> g[] = {{}, {2,3,8}, {1,7}, {1, 4, 5}, {3, 5}, {3,4}, {7}, {2, 6, 8}, {1, 7}};
     bool visited[9] = {false};
-    bfs( g, visited);
+    bfs(1, g, visited);
 
 }

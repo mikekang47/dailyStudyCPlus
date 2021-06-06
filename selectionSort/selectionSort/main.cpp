@@ -1,22 +1,19 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int n = 10;
-int a[10] = {7, 5, 9, 0, 3, 6, 1, 2, 4, 8};
-
 int main() {
-    for(int i = 0; i < n; i++) {
-        int min = i;
-        for(int j = i + 1; j <= n-1; j++) {
-            if(a[min] > a[j]) {
-                min = j;
+    int arr[10] = {1,3,2,5,4,6,7,8,9, 10};
+    for(int i = 0; i < 10; i++) {
+        int min = arr[i];
+        for(int j= i+1; j < 9; j++) {
+            if(arr[j] < min) {
+                min = arr[j];
+                swap(arr[i], arr[j]);
             }
+           
         }
-        swap(a[i], a[min]);
-    }
-    
-    for(int i = 0; i < n; i++) {
-        cout << a[i] << ' ';
+        cout << arr[i] << ' ';
     }
 }
