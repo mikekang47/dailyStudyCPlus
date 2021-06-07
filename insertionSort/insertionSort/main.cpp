@@ -3,7 +3,7 @@
 using namespace std;
 
 int n = 10;
-int a[10] = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
+int a[10] = {1, 8, 3, 5, 6, 2, 9, 4, 10, 7};
 
 
 int main() {
