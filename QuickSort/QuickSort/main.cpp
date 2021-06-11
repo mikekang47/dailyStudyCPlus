@@ -3,15 +3,16 @@
 
 using namespace std;
 
-int target[10] = { 5, 7, 9, 0, 3, 1, 6, 2, 4, 8};
-int n = 10;
+int target[12] = { 5, 7, 9, 0, 3, 1, 6, 2, 4, 8, 25, 10};
+int n = 12;
+
 
 int partition(int *a, int left, int right) {
     int p = a[left];
     int i = left + 1;
-    for(int j = left + 1; j <= right; j++) {
+    for(int j = i; j <= right; j++) {
         if(a[j] < p) {
-            swap(a[j], a[i]);
+            swap(a[i], a[j]);
             i++;
         }
     }
@@ -23,7 +24,7 @@ void sort(int *a, int left, int right) {
     if(left >= right)
         return ;
     int p = partition(a, left, right);
-    sort(a, left, p - 1);
+    sort(a, left, p);
     sort(a, p + 1, right);
 }
 
