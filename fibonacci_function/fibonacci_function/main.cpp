@@ -9,7 +9,7 @@ int fibonacci(int n) {
         dp[1] = 1;
         return 1;
         
-    } if(dp[n] != 0) { // 계산된 값
+    } if(dp[n] != 0) {
         return dp[n];
         
     } else {
