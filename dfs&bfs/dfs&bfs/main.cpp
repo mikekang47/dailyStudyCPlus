@@ -21,14 +21,7 @@ void dfs(int s) {
 }
 
 int main() {
-//    scanf("%d %d %d", &n, &m, &v);
-//    graph[0].push_back({});
-//    for(int i = 1; i <= m; i++) {
-//        int tempa, tempb;
-//        cin >> tempa >> tempb;
-//        graph[i].push_back(tempa);
-//        graph[i].push_back(tempb);
-//    }
+
     dfs(1);
     
 }
