@@ -35,7 +35,7 @@ void bfs(vector<int> graph[], int start, vector<bool> visited) {
 
     while(!q.empty()) {
         int v = q.front();
-        
+
         if(visited[v]) {
             q.pop();
             continue;
@@ -56,7 +56,7 @@ int main() {
     vector<bool> dfs_visited(1001, false);
     vector<bool> bfs_visited(100, false);
     vector<int> graph[1001];
-    
+
     for(int i = 0; i < m; i++) {
         int a, b;
         scanf("%d %d", &a ,&b);
