@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="untitled" targetName="untitled" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -12,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e2204cc-afd5-4021-8fc8-8bc85ded8701" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../findingPassword/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../findingPassword/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dfs&amp;bfs/dfs&amp;bfs.xcodeproj/project.xcworkspace/xcuserdata/mikekang.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../dfs&amp;bfs/dfs&amp;bfs.xcodeproj/project.xcworkspace/xcuserdata/mikekang.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../virus/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../virus/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +22,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -66,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626270058679</updated>
       <workItem from="1626270061558" duration="1029000" />
+      <workItem from="1626274401716" duration="2294000" />
     </task>
     <servers />
   </component>
