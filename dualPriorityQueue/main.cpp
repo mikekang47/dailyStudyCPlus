@@ -1,5 +1,5 @@
 #include <iostream>
-#include <map>
+#include <set>
 
 using namespace std;
 
@@ -10,48 +10,30 @@ int main() {
 
     int t;
     cin >> t;
-
-    for(int i = 0; i < t; i++) {
+    while(t--) {
+        multiset<int> ms;
         int k;
         cin >> k;
-        map<long long, int> mp;
-        long long  temp;
-        char s;
+        while(k--) {
+            char c;
+            int x;
+            cin >> c >> x;
 
-        for(int j = 0; j < k; j++) {
-            cin >> s >> temp;
-
-            if(s == 'I') {
-                auto it = mp.find(temp);
-                if(it != mp.end())
-                    it->second++;
+            if(c == 'I') {
+                ms.insert(x);
+            }
+            else if(c == 'D' && !ms.empty()) {
+                if(x == 1)
+                    ms.erase(--ms.end());
                 else
-                    mp.insert(make_pair(temp, 0));
-
-
-            } else if(s == 'D') {
-                if(mp.empty())
-                    continue;
-                if(temp == 1) {
-                   auto it = prev(mp.end());
-                   if(it->second > 0)
-                       it->second--;
-                   else
-                       mp.erase(it);
-
-                } else {
-                    auto it = mp.begin();
-                    if(it->second > 0)
-                        it->second--;
-                    else
-                        mp.erase(it);
-                }
+                    ms.erase(ms.begin());
             }
         }
-        if(mp.empty())
+        if(!ms.empty()) {
+            cout << *(--ms.end()) << ' ' << *ms.begin() << "\n";
+        } else
             cout << "EMPTY" << "\n";
-        else
-            cout << mp.rbegin()->first << " " << mp.begin() ->first << "\n";
+
     }
     return 0;
 }
