@@ -1,27 +1,47 @@
 #include <iostream>
 #include <string>
-#include <vector>
+#include <math.h>
 #include <algorithm>
 
+/**
+ * 문제 해결의 기본 아이디어는
+ * 타겟 넘버에서 가장 가까운 숫자를 찾는 것.
+ */
 using namespace std;
 
+bool visited[11] = {false, };
+
+
+bool check(int now) {
+
+    string s = to_string(now);
+    for(int i = 0;i < s.length(); i++) {
+        if(visited[s[i] - '0'])
+            return false;
+    }
+    return true;
+}
+
 int main() {
-    ios::sync_with_stdio(0);cin.tie(0);
-    string n;
-    int M;
-    vector<int> error;
-    cin >> n;
-    cin >> M;
-    int cnt = 0;
-    while(M--) {
+    int n, m;
+    cin >> n >> m;
+
+    while(m--) {
         int temp;
         cin >> temp;
-        error.push_back(temp);
+        visited[temp] = true;
     }
-    if(stoi(n) == 100) {
-        cout << "0";
-        return 0;
+
+    string s = to_string(n);
+
+    int Min = abs(n-100);
+    for(int i = 0; i <= 1000000; i++) {
+        if(check(i)) {
+            int tmp = abs(n-i) + to_string(i).length();
+            Min = min(Min, tmp);
+        }
     }
-    
+    cout << Min << "\n";
+
     return 0;
 }
