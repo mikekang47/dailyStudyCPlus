@@ -30,7 +30,6 @@ void dfs(int x, int y) {
                 visited[adjx][adjy] = true;
         }
     }
-
 }
 
 int solution() {

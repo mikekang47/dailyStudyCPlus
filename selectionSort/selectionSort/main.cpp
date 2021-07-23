@@ -4,14 +4,14 @@
 using namespace std;
 
 int main() {
-    int arr[10] = {1,3,2,5,4,6,7,8,9, 10};
-    for(int i = 0; i < 10; i++) {
-        int min = i;
-        for(int j= i+1; j < 9; j++) {
-            if(arr[j] < arr[min]) {
-                min = j;
+    vector<int> arr = {1,8,3,5,6,2,9,4,10,7};
+    for(int i = 0; i < arr.size(); i++) {
+        int min = arr[i];
+        for(int j = i+1; j < arr.size(); j++) {
+            if(min > arr[j]) {
+                min = arr[j];
+                swap(arr[i], arr[j]);
             }
-            swap(arr[i], arr[min]);
         }
         cout << arr[i] << ' ';
     }
