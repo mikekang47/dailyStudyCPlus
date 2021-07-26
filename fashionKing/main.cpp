@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -9,14 +9,23 @@ int main() {
     cin >> t;
     while(t--) {
         int n;
-        unordered_map<string, string> mp;
+        map<string, int> mp;
         cin >> n;
         while(n--) {
             string a, b;
             cin >> a >> b;
-            mp.insert(make_pair(b,a));
+            if(mp[b])
+                mp[b]++;
+            else
+                mp[b] = 1;
         }
-
+        
+        int ans = 1;
+        for(auto it = mp.begin(); it != mp.end(); it++) {
+            ans *= it->second + 1;
+        }
+        ans -= 1;
+        cout << ans << "\n";
     }
     return 0;
 }
