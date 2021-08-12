@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mikekang/work/dailyStudyCPlus/kavinBaken/main.cpp
+iostream
+-
+queue
+-
+vector
+-
+algorithm
+-
+
