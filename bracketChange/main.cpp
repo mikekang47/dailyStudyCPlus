@@ -5,13 +5,33 @@
 
 using namespace std;
 
+bool checkBalance(string p) {
+    if(p.size() == 0) {
+        return false;
+    }
+    int left = 0;
+    int right = 0;
+    for(auto i: p) {
+        if(i == '(') {
+            left++;
+        } else {
+            right++;
+        }
+    }
+    if(left == right) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 bool checkPerfect(string p) {
     stack<char> st;
     for(auto i : p) {
         if(st.empty()) {
             st.push(i);
         } else {
-            if(st.top() != i) {
+            if(st.top() == '(' && st.top() != i) {
                 st.pop();
             } else {
                 st.push(i);
@@ -30,14 +50,10 @@ pair<string, string> recursion(string p) {
     string v = "";
 
     for(int i = 0; i < p.size(); i++) {
-        if(u.size() < 2) {
-            if(u.size() == 0)
-                u += p[i];
-            else if(u.back() != p[i]) {
-                u += p[i];
-            }
-        } else {
+        if(checkBalance(u)) {
             v += p[i];
+        } else {
+            u += p[i];
         }
     }
     return make_pair(u,v);
