@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mikekang/work/dailyStudyCPlus/postfixNotation/main.cpp
+iostream
+-
+string
+-
+stack
+-
+cctype
+-
+
